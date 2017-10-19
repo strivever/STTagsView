@@ -34,17 +34,12 @@
     [btn addTarget:self action:@selector(addTag) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
-    UIButton * btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn1.frame = CGRectMake(250, self.view.frame.size.height - 100, 60, 60);
-    btn1.backgroundColor = [UIColor greenColor];
-    [btn1 addTarget:self action:@selector(removeTag) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn1];
     
     self.tableview = [[UITableView alloc]initWithFrame:self.view.bounds];
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     [self.tableview registerClass:[STTableViewCell class] forCellReuseIdentifier:@"STTableViewCell"];
-    [self.view addSubview:self.tableview];
+ //   [self.view addSubview:self.tableview];
     self.data = @[@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿",@"变量才会",@"变量才会",@"你好",@"你是"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿",@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"你是"]].mutableCopy;
     
     for (int i = 0; i < 5; i ++) {
@@ -56,13 +51,6 @@
 }
 - (void)addTag{
     [_tagView addTag:@"你是变量的生命周期局部变量的生命周期局部变量的生命周期局部变量的生命周期局部变量的生命周期局部变量的生命周期病啊黑呵呵"];
-}
-- (void)removeTag{
-    //[_tagView removeTag];
-    static CGFloat  fontSize = 20;
-    fontSize --;
-    _tagView.textFont = [UIFont systemFontOfSize:fontSize];
-    //_tagView.textColor = [UIColor lightGrayColor];
 }
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
