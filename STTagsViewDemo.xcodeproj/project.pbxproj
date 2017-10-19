@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0430C81F989A7400010244 /* SecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0430C71F989A7400010244 /* SecViewController.m */; };
 		1D1281471F70B8D2006F5632 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1281461F70B8D2006F5632 /* main.m */; };
 		1D12814A1F70B8D2006F5632 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1281491F70B8D2006F5632 /* AppDelegate.m */; };
 		1D12814D1F70B8D2006F5632 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D12814C1F70B8D2006F5632 /* ViewController.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D0430C61F989A7400010244 /* SecViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecViewController.h; sourceTree = "<group>"; };
+		1D0430C71F989A7400010244 /* SecViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecViewController.m; sourceTree = "<group>"; };
 		1D1281421F70B8D2006F5632 /* STTagsViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STTagsViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1281461F70B8D2006F5632 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1D1281481F70B8D2006F5632 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				1D1281491F70B8D2006F5632 /* AppDelegate.m */,
 				1D12814B1F70B8D2006F5632 /* ViewController.h */,
 				1D12814C1F70B8D2006F5632 /* ViewController.m */,
+				1D0430C61F989A7400010244 /* SecViewController.h */,
+				1D0430C71F989A7400010244 /* SecViewController.m */,
 				1D12814E1F70B8D2006F5632 /* Main.storyboard */,
 				1D1281511F70B8D2006F5632 /* Assets.xcassets */,
 				1D1281531F70B8D2006F5632 /* LaunchScreen.storyboard */,
@@ -314,6 +319,7 @@
 				1D12817B1F70BD04006F5632 /* STTagsView.m in Sources */,
 				1D12814D1F70B8D2006F5632 /* ViewController.m in Sources */,
 				1D12814A1F70B8D2006F5632 /* AppDelegate.m in Sources */,
+				1D0430C81F989A7400010244 /* SecViewController.m in Sources */,
 				1D1281841F70E4FE006F5632 /* STTagLayout.m in Sources */,
 				1D12817E1F70BD64006F5632 /* STTagFrame.m in Sources */,
 				1D1281471F70B8D2006F5632 /* main.m in Sources */,

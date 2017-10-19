@@ -10,8 +10,8 @@
 #import "STTagsView.h"
 #import "STTagFrameProtocol.h"
 #import "STTableViewCell.h"
+#import "SecViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, strong)STTagsView * tagView;
 @property (nonatomic, strong)UITableView * tableview;
 @property (nonatomic, strong) NSMutableArray * data;
 @property (nonatomic, strong) NSMutableDictionary * cacheHeight;
@@ -22,24 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.cacheHeight = @{}.mutableCopy;
-    //局部变量的生命周期（只到程序结束，这个局部变量才会销毁）
-    STTagsView * tagView = [STTagsView tagViewWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 0) tagsArray:@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"] textColor:[UIColor grayColor] textFont:[UIFont systemFontOfSize:14] normalTagBackgroundColor:[UIColor whiteColor] tagBorderColor:[UIColor redColor] contentInsets:UIEdgeInsetsMake(20, 10, 20, 10) labelContentInsets:UIEdgeInsetsMake(5, 15, 5, 15) labelHorizontalSpacing:10 labelVerticalSpacing:10];
-    [self.view addSubview:tagView];
-    
-    _tagView = tagView;
-    
-    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(50, self.view.frame.size.height - 100, 60, 60);
-    btn.backgroundColor = [UIColor redColor];
-    [btn addTarget:self action:@selector(addTag) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    
+        
     
     self.tableview = [[UITableView alloc]initWithFrame:self.view.bounds];
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     [self.tableview registerClass:[STTableViewCell class] forCellReuseIdentifier:@"STTableViewCell"];
- //   [self.view addSubview:self.tableview];
+    [self.view addSubview:self.tableview];
     self.data = @[@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿",@"变量才会",@"变量才会",@"你好",@"你是"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿",@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿"],@[@"局部变量的生命周期（只到程序结束，这个局部变量才会销毁）",@"变局部变",@"啦啦啦啦绿",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是",@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"你是"],@[@"变量才会",@"变量才会",@"你好",@"你是"]].mutableCopy;
     
     for (int i = 0; i < 5; i ++) {
@@ -47,14 +36,25 @@
         [self.data addObjectsFromArray:temp];
     }
     [self.tableview reloadData];
+    
+    
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(50, self.view.frame.size.height - 100, 150, 60);
+    btn.backgroundColor = [UIColor redColor];
+    [btn setTitle:@"普通标签" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(demo2) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    // Do any additional setup af
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
-- (void)addTag{
-    [_tagView addTag:@"你是变量的生命周期局部变量的生命周期局部变量的生命周期局部变量的生命周期局部变量的生命周期局部变量的生命周期病啊黑呵呵"];
+- (void)demo2{
+    SecViewController * vc = [SecViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    _tagView.frame = CGRectMake(0, 100, self.view.frame.size.width, 0);
+    
     _tableview.frame = self.view.bounds;
 }
 - (void)didReceiveMemoryWarning {
